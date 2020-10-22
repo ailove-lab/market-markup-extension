@@ -1,0 +1,30 @@
+{
+  "name": "Product feed marker",
+  "version": "1.0",
+  "description": "Инструмент разметки продуктовых фидов",
+  "manifest_version": 2,
+
+  "incognito": "split",
+  "permissions": [
+      "storage","cookies", "tabs", "http://*/*", "https://*/*"
+  ],
+  
+  "icons": { 
+    "16": "favicon-16x16.png", 
+    "32": "favicon-32x32.png", 
+    "96": "favicon-96x96.png" 
+  },
+    
+  "browser_action": {},
+
+  "content_scripts": [{
+    "js": ["main.js"],
+    "run_at": "document_idle",
+    "matches": ["<all_urls>"]
+  }],
+  
+  "web_accessible_resources":[
+    "favicon.png",
+    "fonts/*"
+  ]
+}
