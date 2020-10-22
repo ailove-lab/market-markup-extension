@@ -1,2 +1,2 @@
 #!/bin/bash
-coffee -cbwo dist src/main.coffee
+coffee -cwo dist src/*.coffee

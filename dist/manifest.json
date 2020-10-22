@@ -5,9 +5,7 @@
   "manifest_version": 2,
 
   "incognito": "split",
-  "permissions": [
-      "storage","cookies", "tabs", "http://*/*", "https://*/*"
-  ],
+  "permissions": [ "contextMenus" ],
   
   "icons": { 
     "16": "favicon-16x16.png", 
@@ -16,9 +14,13 @@
   },
     
   "browser_action": {},
+  
+  "background": {
+    "scripts": ["background.js"]
+  },
 
   "content_scripts": [{
-    "js": ["main.js"],
+    "js": ["content.js"],
     "run_at": "document_idle",
     "matches": ["<all_urls>"]
   }],
