@@ -219,7 +219,7 @@ saveMarkup = ->
   for k, v of selectors
     json.value[k] = selectors[k].element
   json = JSON.stringify json
-  res = fetch "https://vs43.ailove.ru:8800/markup_extension/#{encodeURIComponent(window.location.href)}",
+  res = await fetch "https://vs43.ailove.ru:8800/markup_extension/#{encodeURIComponent(window.location.href)}",
     method: 'POST'              #  *GET, POST, PUT, DELETE, etc.
     mode: 'cors'                #  no-cors, cors, *same-origin
     cache: 'no-cache'           #  *default, no-cache, reload, force-cache, only-if-cached

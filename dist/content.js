@@ -261,7 +261,7 @@ transition: all 300ms ease;`;
   };
 
   // Отправка разметки на сервер
-  saveMarkup = function() {
+  saveMarkup = async function() {
     var json, k, res, v;
     json = {
       key: window.location.href,
@@ -272,7 +272,7 @@ transition: all 300ms ease;`;
       json.value[k] = selectors[k].element;
     }
     json = JSON.stringify(json);
-    return res = fetch(`https://vs43.ailove.ru:8800/markup_extension/${encodeURIComponent(window.location.href)}`, {
+    return res = (await fetch(`https://vs43.ailove.ru:8800/markup_extension/${encodeURIComponent(window.location.href)}`, {
       method: 'POST', //  *GET, POST, PUT, DELETE, etc.
       mode: 'cors', //  no-cors, cors, *same-origin
       cache: 'no-cache', //  *default, no-cache, reload, force-cache, only-if-cached
@@ -283,7 +283,7 @@ transition: all 300ms ease;`;
       redirect: 'follow', //  manual, *follow, error
       referrer: 'no-referrer', //  no-referrer, *client
       body: json
-    });
+    }));
   };
 
   // document.location.reload(true)
