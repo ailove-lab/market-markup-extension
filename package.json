@@ -2,5 +2,8 @@
   "name": "markup_extension",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "coffeescript": "^2.5.1"
+  }
 }
